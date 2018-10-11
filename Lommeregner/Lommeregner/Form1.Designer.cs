@@ -164,6 +164,7 @@
             this.buttonClear.TabIndex = 10;
             this.buttonClear.Text = "C";
             this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // button0
             // 
@@ -207,6 +208,7 @@
             this.buttonMinus.TabIndex = 14;
             this.buttonMinus.Text = "-";
             this.buttonMinus.UseVisualStyleBackColor = true;
+            this.buttonMinus.Click += new System.EventHandler(this.buttonMinus_Click);
             // 
             // buttonGange
             // 
@@ -217,6 +219,7 @@
             this.buttonGange.TabIndex = 15;
             this.buttonGange.Text = "*";
             this.buttonGange.UseVisualStyleBackColor = true;
+            this.buttonGange.Click += new System.EventHandler(this.buttonGange_Click);
             // 
             // buttonDivider
             // 
@@ -227,6 +230,7 @@
             this.buttonDivider.TabIndex = 16;
             this.buttonDivider.Text = "/";
             this.buttonDivider.UseVisualStyleBackColor = true;
+            this.buttonDivider.Click += new System.EventHandler(this.buttonDivider_Click);
             // 
             // Form1
             // 

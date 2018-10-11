@@ -86,22 +86,83 @@ namespace Lommeregner
             textBoxDisplay.Text += "0";
         }
 
-        private void buttonPlus_Click(object sender, EventArgs e)
-        {
-            // husk at plus er operatoren
-            op = "+";
-            // gem tallet i tal1
-            tal1 = Convert.ToInt32(textBoxDisplay.Text);
-            textBoxDisplay.Clear();
-        }
 
         private void buttonLigMed_Click(object sender, EventArgs e)
         {
-            tal2 = Convert.ToInt32(textBoxDisplay.Text);
+            Beregn();
+        }
+
+
+        private void buttonPlus_Click(object sender, EventArgs e)
+        {
+            BrugOperator("+");
+        }
+
+        private void buttonMinus_Click(object sender, EventArgs e)
+        {
+            BrugOperator("-");
+        }
+
+        private void buttonGange_Click(object sender, EventArgs e)
+        {
+            BrugOperator("*");
+        }
+
+        private void buttonDivider_Click(object sender, EventArgs e)
+        {
+            BrugOperator("/");
+        }
+
+
+        private void BrugOperator(string oppern)
+        {
+            op = oppern;
+            if (textBoxDisplay.Text != "")
+            {
+                tal1 = Convert.ToInt32(textBoxDisplay.Text);
+            }
+            textBoxDisplay.Clear();
+        }
+
+
+        private void Beregn()
+        {
+            if (textBoxDisplay.Text != "")
+            {
+                tal2 = Convert.ToInt32(textBoxDisplay.Text);
+            }
+
             if (op == "+")
             {
                 textBoxDisplay.Text = (tal1 + tal2).ToString();
             }
+            else if (op == "-")
+            {
+                textBoxDisplay.Text = (tal1 - tal2).ToString();
+            }
+            else if (op == "*")
+            {
+                textBoxDisplay.Text = (tal1 * tal2).ToString();
+            }
+            else if (op == "/")
+            {
+                if (tal2 != 0)
+                {
+                    textBoxDisplay.Text = (tal1 / tal2).ToString();
+                }
+            }
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
+
+        void Clear()
+        {
+            tal1 = 0;
+            tal2 = 0;
+            textBoxDisplay.Clear();
         }
     }
 }
